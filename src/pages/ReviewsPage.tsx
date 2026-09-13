@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, CheckCircle2, MessageSquarePlus, MessageCircle, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
-import { customerReviews, reviewStats } from '../../src/data/testimonials';
+import { customerReviews, reviewStats } from '../data/testimonials';
 import { businessConfig } from '../data/businessConfig';
 import { PageRoute } from '../types';
 

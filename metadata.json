@@ -1,0 +1,8 @@
+{
+  "name": "Apex Plumbing & Drain Services",
+  "description": "Professional 24/7 residential and emergency plumbing services, drain cleaning, water heater repair, and leak detection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

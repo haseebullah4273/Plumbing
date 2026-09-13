@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #F7F9FC;
+    --foreground: #0B172A;
+    --primary: #0D5EA8;
+    --primary-dark: #073B6B;
+    --accent: #F59E0B;
+    --accent-dark: #D97706;
+    --white: #FFFFFF;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --dark: #071525;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
+
+@keyframes flow-line {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-line {
+  stroke-dasharray: 20, 10;
+  animation: flow-line 4s linear infinite;
+}

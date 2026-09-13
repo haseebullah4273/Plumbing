@@ -9,7 +9,8 @@ import {
   Paperclip, 
   Loader2,
   Wrench,
-  ShieldCheck
+  ShieldCheck,
+  MessageCircle
 } from 'lucide-react';
 import { ServiceRequestFormData } from '../../types';
 import { servicesData } from '../../data/services';
@@ -240,7 +241,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
               setFormData({ ...formData, fullName: e.target.value });
               if (errors.fullName) setErrors({ ...errors, fullName: '' });
             }}
-            placeholder="e.g. Robert Miller"
+            placeholder="e.g. Tariq Mehmood"
             className={`w-full bg-slate-50 border text-slate-900 text-sm rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D5EA8] transition-all ${
               errors.fullName ? 'border-red-500 bg-red-50/50' : 'border-slate-300'
             }`}
@@ -254,7 +255,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
 
         <div>
           <label htmlFor="form-phone-number" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-            Phone Number *
+            Mobile / WhatsApp Number *
           </label>
           <input
             id="form-phone-number"
@@ -264,7 +265,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
               setFormData({ ...formData, phone: e.target.value });
               if (errors.phone) setErrors({ ...errors, phone: '' });
             }}
-            placeholder="(555) 000-0000"
+            placeholder="0312-2673667"
             className={`w-full bg-slate-50 border text-slate-900 text-sm rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D5EA8] transition-all ${
               errors.phone ? 'border-red-500 bg-red-50/50' : 'border-slate-300'
             }`}
@@ -291,7 +292,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
               setFormData({ ...formData, email: e.target.value });
               if (errors.email) setErrors({ ...errors, email: '' });
             }}
-            placeholder="robert@example.com"
+            placeholder="tariq@gmail.com"
             className={`w-full bg-slate-50 border text-slate-900 text-sm rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D5EA8] transition-all ${
               errors.email ? 'border-red-500 bg-red-50/50' : 'border-slate-300'
             }`}
@@ -305,7 +306,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
 
         <div>
           <label htmlFor="form-street-address" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-            Street Address or City *
+            House / Street Address & Area *
           </label>
           <input
             id="form-street-address"
@@ -315,7 +316,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
               setFormData({ ...formData, streetAddress: e.target.value });
               if (errors.streetAddress) setErrors({ ...errors, streetAddress: '' });
             }}
-            placeholder="e.g. 742 Evergreen Terrace, Metro Valley"
+            placeholder="e.g. House 45, St 12, Phase 5 DHA / Bahria Town"
             className={`w-full bg-slate-50 border text-slate-900 text-sm rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D5EA8] transition-all ${
               errors.streetAddress ? 'border-red-500 bg-red-50/50' : 'border-slate-300'
             }`}
@@ -331,7 +332,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
       {/* Description */}
       <div>
         <label htmlFor="form-problem-description" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-          Describe the Problem / Symptoms *
+          Describe the Plumbing Issue *
         </label>
         <textarea
           id="form-problem-description"
@@ -341,7 +342,7 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
             setFormData({ ...formData, description: e.target.value });
             if (errors.description) setErrors({ ...errors, description: '' });
           }}
-          placeholder="What is happening? (e.g. Water heater leaking from the bottom base, foul gurgling from kitchen sink, low hot water pressure in master shower...)"
+          placeholder="What is happening? (e.g. PPR joint leaking inside concealed washroom wall, motor pump not pulling water to roof tank, geyser leaking or thermostat fault, GI pipe replacement needed...)"
           className={`w-full bg-slate-50 border text-slate-900 text-sm rounded-xl p-3 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D5EA8] transition-all resize-none ${
             errors.description ? 'border-red-500 bg-red-50/50' : 'border-slate-300'
           }`}
@@ -396,20 +397,37 @@ export const RequestServiceForm: React.FC<RequestServiceFormProps> = ({
         ) : (
           <>
             <Send className="w-4 h-4" />
-            <span>REQUEST SERVICE NOW</span>
+            <span>SUBMIT BOOKING REQUEST</span>
           </>
         )}
       </button>
 
+      <div className="relative flex py-1 items-center">
+        <div className="flex-grow border-t border-slate-200" />
+        <span className="flex-shrink mx-3 text-[11px] font-semibold text-slate-400 uppercase">Or Fast Response Via WhatsApp</span>
+        <div className="flex-grow border-t border-slate-200" />
+      </div>
+
+      <a
+        href={businessConfig.whatsAppLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-xs transition-all duration-200 flex items-center justify-center gap-2"
+        id="quick-whatsapp-quote-btn"
+      >
+        <MessageCircle className="w-4 h-4 fill-current" />
+        <span>Chat on WhatsApp ({businessConfig.phone})</span>
+      </a>
+
       <div className="flex items-center justify-center gap-4 text-[11px] text-slate-400 pt-1">
         <span className="flex items-center gap-1">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-          Upfront Pricing Guaranteed
+          Upfront PKR Pricing
         </span>
         <span>•</span>
-        <span>Zero Hidden Travel Fees</span>
+        <span>No Hidden Fees</span>
         <span>•</span>
-        <span>No Credit Card Required</span>
+        <span>Police Verified Technicians</span>
       </div>
     </form>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, Calendar, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Phone, Calendar, ArrowRight, ShieldCheck, MessageCircle } from 'lucide-react';
 import { businessConfig } from '../../data/businessConfig';
 import { PipeRoute } from '../animations/PipeAnimation';
 
@@ -21,51 +21,53 @@ export const FullWidthCTA: React.FC<FullWidthCTAProps> = ({ onOpenRequestModal }
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 bg-sky-500/20 text-sky-300 font-bold px-4 py-1 rounded-full text-xs uppercase tracking-wider border border-sky-400/30"
+          className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 font-bold px-4 py-1 rounded-full text-xs uppercase tracking-wider border border-emerald-400/30"
         >
-          <span>Ready to Help Today</span>
+          <span>Available Right Now Across Karachi</span>
         </motion.div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
-          Let's Get Your Plumbing Back on Track.
+          Get Your Home's Water & Plumbing Fixed Right.
         </h2>
 
         <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-          Tell us what's going on and we'll help you figure out the next step. From minor faucet drips to complete sewer replacements, we deliver honest answers and upfront quotes.
+          From concealed wall leaks and PPR pipe fusion to water motor pumps and tank cleaning — get fast doorstep service across all areas of Karachi, supervised by Haider Ali.
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            type="button"
-            onClick={onOpenRequestModal}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-[#073B6B] font-extrabold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 cursor-pointer"
-            id="fullwidth-cta-request-btn"
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 flex-wrap">
+          <a
+            href={businessConfig.whatsAppLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-extrabold text-base px-7 py-4 rounded-xl shadow-xl transition-all duration-200"
+            id="fullwidth-cta-whatsapp-btn"
           >
-            <Calendar className="w-5 h-5 text-[#0D5EA8]" />
-            <span>REQUEST SERVICE</span>
-          </button>
+            <MessageCircle className="w-5 h-5 fill-current" />
+            <span>WHATSAPP: {businessConfig.phone}</span>
+          </a>
 
           <a
             href={businessConfig.rawEmergencyPhone}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-base px-7 py-4 rounded-xl shadow-xl transition-all duration-200 text-center"
             id="fullwidth-cta-call-btn"
           >
             <Phone className="w-5 h-5 fill-current animate-pulse-subtle" />
-            <span>CALL NOW: {businessConfig.phone}</span>
+            <span>CALL DIRECT: {businessConfig.phone}</span>
           </a>
         </div>
 
-        <div className="pt-6 flex items-center justify-center gap-6 text-xs text-slate-400">
+        <div className="pt-6 flex items-center justify-center gap-6 text-xs text-slate-400 flex-wrap">
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            100% Upfront Pricing
+            Clear Upfront Rates (PKR)
           </span>
           <span>•</span>
-          <span>Licensed & Insured ({businessConfig.licenseNumber})</span>
+          <span>Police-Verified Technicians</span>
           <span>•</span>
-          <span>24/7 Priority Emergency Support</span>
+          <span>Parda & Family Privacy Respected</span>
         </div>
       </div>
     </section>
   );
 };
+

@@ -85,11 +85,14 @@ export const ContactPage: React.FC<{ navigate: (route: PageRoute) => void }> = (
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-bold text-slate-900 block">Physical Office:</span>
-                    <span>
+                    <span className="font-bold text-slate-900 block">Workshop & Dispatch Office:</span>
+                    <span className="text-slate-700 font-medium">
                       {businessConfig.address}<br />
                       {businessConfig.city}, {businessConfig.state} {businessConfig.zip}
                     </span>
+                    <p className="text-[11px] text-emerald-700 font-medium mt-1">
+                      Located on Main Korangi Road right near DHA Phase 1 & 2 for quick dispatch across DHA, Clifton, and all Karachi neighborhoods.
+                    </p>
                   </div>
                 </div>
 

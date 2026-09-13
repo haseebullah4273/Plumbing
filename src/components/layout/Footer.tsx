@@ -8,7 +8,8 @@ import {
   ShieldCheck, 
   ArrowUpRight, 
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  MessageCircle
 } from 'lucide-react';
 import { PageRoute } from '../../types';
 import { businessConfig } from '../../data/businessConfig';
@@ -44,19 +45,24 @@ export const Footer: React.FC<FooterProps> = ({ navigate, onOpenRequestModal }) 
 
           <div className="flex flex-col sm:flex-row items-center gap-3 relative z-10 w-full md:w-auto">
             <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3 rounded-xl shadow-lg transition-colors text-center text-sm"
+              id="footer-whatsapp-btn"
+            >
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span>WhatsApp: {businessConfig.phone}</span>
+            </a>
+
+            <a
               href={businessConfig.rawEmergencyPhone}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-colors text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-3 rounded-xl shadow-lg transition-colors text-center text-sm"
               id="footer-emergency-call-btn"
             >
               <Phone className="w-4 h-4 fill-current" />
-              <span>{businessConfig.emergencyPhone}</span>
+              <span>Call: {businessConfig.emergencyPhone}</span>
             </a>
-            <button
-              onClick={onOpenRequestModal}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-5 py-3.5 rounded-xl transition-colors cursor-pointer text-center"
-            >
-              Schedule Online
-            </button>
           </div>
         </div>
       </div>
@@ -72,23 +78,23 @@ export const Footer: React.FC<FooterProps> = ({ navigate, onOpenRequestModal }) 
               </div>
               <div>
                 <span className="font-extrabold text-xl text-white tracking-tight">
-                  APEX PLUMBING
+                  THEHOMIST
                 </span>
                 <p className="text-xs text-sky-400 font-semibold tracking-wide">
-                  & DRAIN SOLUTIONS
+                  KARACHI PLUMBING SPECIALISTS
                 </p>
               </div>
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Dedicated to high-integrity residential and commercial plumbing repairs, water heater replacements, trenchless sewer restorations, and immediate emergency response.
+              Dedicated to high-integrity residential plumbing, PPR heat fusion jointing, PVC drainage unchoking, water motor pump repairs, and underground tank waterproofing across Karachi. Supervised by Owner Haider Ali.
             </p>
 
             {/* Trust badges list */}
             <div className="space-y-1.5 pt-2 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>State Contractor C-36 Lic. #{businessConfig.licenseNumber}</span>
+                <span>Supervised by Owner & Master Plumber Haider Ali</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -96,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate, onOpenRequestModal }) 
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Background-Checked & Drug-Tested Master Plumbers</span>
+                <span>100% Karachi Doorstep Service Guarantee</span>
               </div>
             </div>
           </div>
@@ -162,6 +168,21 @@ export const Footer: React.FC<FooterProps> = ({ navigate, onOpenRequestModal }) 
               Contact & Dispatch
             </h4>
             <div className="space-y-3 text-xs sm:text-sm">
+              <div className="flex items-start gap-2.5">
+                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div>
+                  <a
+                    href={businessConfig.whatsAppLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-bold hover:text-emerald-400 transition-colors"
+                  >
+                    WhatsApp: {businessConfig.phone}
+                  </a>
+                  <div className="text-[11px] text-emerald-400">Instant Chat & Location Share</div>
+                </div>
+              </div>
+
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <div>

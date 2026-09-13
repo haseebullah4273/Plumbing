@@ -11,7 +11,8 @@ import {
   ShieldCheck, 
   Wrench,
   Clock,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 import { servicesData } from '../../data/services';
 import { PageRoute } from '../../types';
@@ -180,14 +181,15 @@ export const ServicesInteractive: React.FC<ServicesInteractiveProps> = ({
               </div>
 
               <div className="flex items-center gap-3 w-full sm:w-auto">
-                <button
-                  type="button"
-                  onClick={() => onOpenRequestModal(activeService.slug)}
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#0D5EA8] hover:bg-sky-600 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all cursor-pointer shadow-lg"
+                <a
+                  href={`https://wa.me/923122673667?text=Assalam-o-Alaikum%20TheHomist,%20I%20need%20inquiry%20for%20${encodeURIComponent(activeService.title)}%20in%20Karachi.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all cursor-pointer shadow-lg"
                 >
-                  <Sparkles className="w-4 h-4 text-amber-300" />
-                  <span>Request Service</span>
-                </button>
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>WhatsApp Inquiry</span>
+                </a>
 
                 <button
                   type="button"

@@ -8,7 +8,6 @@ import { HowItWorks } from '../components/home/HowItWorks';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { BeforeAfterSlider } from '../components/home/BeforeAfterSlider';
 import { TestimonialsCarousel } from '../components/home/TestimonialsCarousel';
-import { ServiceAreaMap } from '../components/home/ServiceAreaMap';
 import { LocalSeoContent } from '../components/home/LocalSeoContent';
 import { FullWidthCTA } from '../components/home/FullWidthCTA';
 import { PageRoute } from '../types';
@@ -60,13 +59,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 9. Reviews & Google Trust Section */}
       <TestimonialsCarousel navigate={navigate} />
 
-      {/* 10. Service Areas & Live Zip Checker */}
-      <ServiceAreaMap
-        navigate={navigate}
-        onOpenRequestModal={() => onOpenRequestModal()}
-      />
-
-      {/* 11. Local Plumbing Educational / SEO Guide */}
+      {/* 10. Local Plumbing Educational / SEO Guide */}
       <LocalSeoContent navigate={navigate} />
 
       {/* 12. Full Width High-Converting Bottom CTA */}

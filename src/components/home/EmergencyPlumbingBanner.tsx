@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, AlertTriangle, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
+import { Phone, AlertTriangle, ShieldCheck, Clock, MessageCircle } from 'lucide-react';
 import { businessConfig } from '../../data/businessConfig';
 import { PipeRoute } from '../animations/PipeAnimation';
 import { PageRoute } from '../../types';
@@ -82,29 +82,33 @@ export const EmergencyPlumbingBanner: React.FC<EmergencyPlumbingBannerProps> = (
             </div>
           </div>
 
-          {/* Large Orange CTA */}
+          {/* Action CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 flex-wrap"
           >
             <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-base px-7 py-3.5 rounded-xl shadow-xl transition-all duration-200 text-center"
+              id="emergency-banner-whatsapp-btn"
+            >
+              <MessageCircle className="w-5 h-5 fill-current" />
+              <span>SEND WHATSAPP: {businessConfig.phone}</span>
+            </a>
+
+            <a
               href={businessConfig.rawEmergencyPhone}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-slate-950 font-black text-base sm:text-lg px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 hover:shadow-2xl transition-all duration-200 text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-slate-950 font-black text-base px-7 py-3.5 rounded-xl shadow-xl shadow-amber-500/20 hover:shadow-2xl transition-all duration-200 text-center"
               id="emergency-section-call-btn"
             >
               <Phone className="w-5 h-5 fill-current animate-pulse-subtle" />
-              <span>CALL FOR EMERGENCY SERVICE: {businessConfig.emergencyPhone}</span>
+              <span>CALL NOW: {businessConfig.emergencyPhone}</span>
             </a>
-
-            <button
-              onClick={() => navigate('/services/emergency-plumbing')}
-              className="text-xs sm:text-sm text-sky-300 hover:text-white font-semibold underline underline-offset-4 transition-colors cursor-pointer py-2"
-            >
-              Emergency Checklist: What to do before we arrive →
-            </button>
           </motion.div>
         </div>
       </div>

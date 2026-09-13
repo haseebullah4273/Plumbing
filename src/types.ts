@@ -1,12 +1,7 @@
 export type PageRoute =
   | '/'
   | '/services'
-  | '/services/emergency-plumbing'
-  | '/services/drain-cleaning'
-  | '/services/water-heater'
-  | '/services/leak-detection'
-  | '/services/sewer-line'
-  | '/services/faucet-repair'
+  | `/services/${string}`
   | '/about'
   | '/reviews'
   | '/service-areas'
@@ -47,17 +42,20 @@ export interface ReviewItem {
   location: string;
   rating: number;
   date: string;
-  category: 'All' | 'Emergency' | 'Drain' | 'Water Heater' | 'Repair';
+  category: string;
   servicePerformed: string;
   content: string;
   verified: boolean;
+  city?: string;
+  avatar?: string;
+  role?: string;
 }
 
 export interface FAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'General' | 'Emergency' | 'Pricing' | 'Services' | 'Water Heaters' | 'Drain Cleaning' | 'Appointments';
+  category: string;
 }
 
 export interface ServiceArea {
@@ -78,6 +76,9 @@ export interface BusinessConfig {
   rawPhone: string;
   emergencyPhone: string;
   rawEmergencyPhone: string;
+  whatsAppNumber: string;
+  whatsAppLink: string;
+  currency: string;
   email: string;
   address: string;
   city: string;
@@ -94,6 +95,7 @@ export interface BusinessConfig {
   licenseNumber: string;
   insured: boolean;
   insuranceCoverage: string;
+  ownerName?: string;
   hours: {
     weekday: string;
     weekend: string;

@@ -11,7 +11,8 @@ import {
   CheckCircle2, 
   Phone,
   Filter,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { servicesData } from '../data/services';
@@ -64,12 +65,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </p>
 
           <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => onOpenRequestModal()}
-              className="bg-[#0D5EA8] hover:bg-[#073B6B] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg transition-colors cursor-pointer"
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg transition-colors inline-flex items-center gap-2"
             >
-              Request an Estimate Online
-            </button>
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span>WhatsApp Plumber</span>
+            </a>
             <a
               href={businessConfig.rawEmergencyPhone}
               className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-6 py-3 rounded-xl shadow-lg transition-colors inline-flex items-center gap-2"
@@ -186,12 +190,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <button
-                    onClick={() => onOpenRequestModal(service.slug)}
-                    className="text-xs font-bold bg-slate-100 hover:bg-[#0D5EA8] hover:text-white text-slate-700 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+                  <a
+                    href={`https://wa.me/923122673667?text=Assalam-o-Alaikum%20TheHomist,%20I%20need%20details%20and%20quote%20for%20${encodeURIComponent(service.title)}%20in%20Karachi.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white px-3 py-1.5 rounded-lg transition-colors"
                   >
-                    Get Estimate
-                  </button>
+                    WhatsApp Quote
+                  </a>
                 </div>
               </div>
             </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, ShieldCheck, Award, ThumbsUp, Wrench } from 'lucide-react';
+import { CheckCircle2, Award } from 'lucide-react';
 import { siteImages } from '../../data/images';
 import { businessConfig } from '../../data/businessConfig';
 import { AnimatedCounter } from '../animations/AnimatedCounter';
@@ -8,28 +8,28 @@ import { AnimatedCounter } from '../animations/AnimatedCounter';
 export const WhyChooseUs: React.FC = () => {
   const benefits = [
     {
-      title: 'Experienced Professionals',
-      desc: 'Master technicians with an average of 12+ years in field mechanics and code regulations.',
+      title: 'Verified Pakistani Plumbers (Karkun)',
+      desc: 'Experienced tradesmen with verified CNIC, police verification, and extensive field mastery in residential bungalows.',
     },
     {
-      title: 'Honest Recommendations',
-      desc: 'We offer repair alternatives whenever possible, never pushing costly unnecessary replacements.',
+      title: 'Authentic Branded Materials',
+      desc: 'We strictly install authentic Master PPRC, Popular UPVC, and heavy-gauge IIL GI pipes with zero counterfeit fittings.',
     },
     {
-      title: 'Clear Communication',
-      desc: 'Live arrival tracking, detailed digital diagnostic reports, and no industry jargon.',
+      title: 'Respect for Household Privacy (Parda)',
+      desc: 'Our staff wear clean over-booties, maintain dignified conduct, and strictly respect family privacy inside Pakistani homes.',
     },
     {
-      title: 'Quality Craftsmanship',
-      desc: 'Top-tier copper, Uponor PEX, heavy brass fittings, and zero corner-cutting.',
+      title: 'Non-Invasive Wall Leak Detection',
+      desc: 'We use pressure testing to pinpoint hidden wall leakage (seem/sem) so only 1–2 tiles are touched instead of whole bathrooms.',
     },
     {
-      title: 'Fast Emergency Response',
-      desc: 'Under 45-minute average local arrival for burst pipes, backups, and active flooding.',
+      title: 'Water Motor & Geyser Experts',
+      desc: 'Complete mastery over suction pumps, rooftop automated float switches, and instant gas/electric geysers (Canon, NasGas, Boss).',
     },
     {
-      title: 'Respectful Service',
-      desc: 'Clean uniforms, protective shoe covers, surface drop cloths, and immaculate cleanup.',
+      title: 'Clear PKR Upfront Pricing',
+      desc: 'Transparent inspection rate and fixed written quotation in Pakistani Rupees before commencing work. No surprise charges.',
     },
   ];
 
@@ -48,19 +48,19 @@ export const WhyChooseUs: React.FC = () => {
             >
               <img
                 src={siteImages.plumberUnderSink}
-                alt="Professional Plumber Inspecting Pipes"
+                alt="Pakistani Plumbing Specialist at Work"
                 className="w-full h-[520px] object-cover"
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 text-white text-xs">
-                <span className="bg-sky-500 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider text-[10px]">
+                <span className="bg-emerald-600 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider text-[10px]">
                   Verified Technicians
                 </span>
                 <p className="font-semibold text-sm mt-1">
-                  Factory certified on Rheem, Moen, Kohler & Navien systems.
+                  Master PPRC fusion certified • Sonex, Grohe & Faisal sanitary specialists.
                 </p>
               </div>
             </motion.div>
@@ -83,7 +83,7 @@ export const WhyChooseUs: React.FC = () => {
                 <AnimatedCounter end={businessConfig.yearsExperience} suffix="+" />
               </div>
               <p className="text-xs text-slate-500 font-medium mt-0.5">
-                Years Serving Local Homes & Businesses
+                Years Serving Pakistani Homes & Commercial Sites
               </p>
             </motion.div>
           </div>
@@ -91,14 +91,14 @@ export const WhyChooseUs: React.FC = () => {
           {/* Right: Why Homeowners Choose Us Content */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0D5EA8] bg-blue-100/60 px-3 py-1 rounded-full border border-blue-200">
-                The Apex Standard
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                Pakistan's Quality Plumbing Standard
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
-                Why Homeowners Choose Us
+                Why Pakistani Homeowners Trust Us
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-                When a plumbing failure strikes your home, you don't need high-pressure sales reps—you need seasoned master technicians who troubleshoot accurately and respect your property.
+                Plumbing issues in Pakistan require deep understanding of local water supply schedules, overhead and underground water tanks, high-pressure motors, and concealed wall piping. We provide certified craftsmanship with absolute honesty.
               </p>
             </div>
 
@@ -130,21 +130,21 @@ export const WhyChooseUs: React.FC = () => {
             <div className="pt-4 border-t border-slate-200 grid grid-cols-3 gap-4 text-center sm:text-left">
               <div>
                 <div className="text-2xl font-black text-[#0D5EA8]">
-                  <AnimatedCounter end={14500} suffix="+" />
+                  <AnimatedCounter end={18500} suffix="+" />
                 </div>
-                <div className="text-xs text-slate-500">Jobs Completed</div>
+                <div className="text-xs text-slate-500">Homes Served in Pakistan</div>
               </div>
 
               <div>
                 <div className="text-2xl font-black text-amber-600">
                   <AnimatedCounter end={4.9} decimals={1} />
                 </div>
-                <div className="text-xs text-slate-500">Average Rating</div>
+                <div className="text-xs text-slate-500">Average Client Rating</div>
               </div>
 
               <div>
                 <div className="text-2xl font-black text-emerald-600">100%</div>
-                <div className="text-xs text-slate-500">Licensed & Insured</div>
+                <div className="text-xs text-slate-500">Verified Technicians</div>
               </div>
             </div>
           </div>

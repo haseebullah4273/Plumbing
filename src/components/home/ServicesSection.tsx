@@ -44,14 +44,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#0D5EA8] bg-blue-100/60 px-3 py-1 rounded-full border border-blue-200">
-            Comprehensive Plumbing Solutions
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+            Specialized Plumbing Solutions in Pakistan
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
-            Plumbing Services We Handle
+            PPR, PVC, GI & Sanitary Services
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mt-3 leading-relaxed">
-            From everyday fixture repairs to urgent late-night emergencies, our master plumbers deliver prompt, long-lasting fixes backed by a written guarantee.
+            Engineered for Pakistani bungalows, apartments, and commercial plazas. Upfront flat-rate pricing in PKR, genuine Master/Popular branded fittings, and 24/7 on-call dispatch.
           </p>
         </div>
 
@@ -122,12 +122,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </button>
 
-                  <button
-                    onClick={() => onOpenRequestModal(service.slug)}
-                    className="text-xs font-semibold text-slate-500 hover:text-slate-900 px-2.5 py-1 rounded bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer"
+                  <a
+                    href={`https://wa.me/923122673667?text=Assalam-o-Alaikum%20TheHomist,%20I%20need%20price%20quote%20for%20${encodeURIComponent(service.title)}%20in%20Karachi.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-100 transition-colors flex items-center gap-1"
                   >
-                    Get Estimate
-                  </button>
+                    <span>WhatsApp Quote</span>
+                  </a>
                 </div>
               </div>
             </motion.div>

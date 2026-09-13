@@ -13,7 +13,8 @@ import {
   ShieldCheck, 
   Clock, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 import { PageRoute } from '../../types';
 import { businessConfig } from '../../data/businessConfig';
@@ -95,14 +96,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-lg sm:text-xl text-[#0B172A] tracking-tight">
-                  APEX
+                  The Homist
                 </span>
-                <span className="text-xs uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-50 text-[#0D5EA8]">
-                  PLUMBING
+                <span className="text-xs uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  KARACHI
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
-                Licensed • Insured • 24/7 Service
+                PPR • PVC • GI Specialists • 24/7 Doorstep
               </p>
             </div>
           </button>
@@ -233,11 +234,22 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* Desktop Right CTA: 24/7 Emergency Phone & Request Button */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop Right CTA: WhatsApp, Phone & Request Button */}
+          <div className="hidden lg:flex items-center gap-2.5">
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all group"
+              id="navbar-whatsapp-cta"
+            >
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span>WhatsApp Us</span>
+            </a>
+
             <a
               href={businessConfig.rawPhone}
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl border border-slate-200 hover:border-[#0D5EA8] hover:bg-blue-50/50 transition-all text-left group"
+              className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-slate-200 hover:border-[#0D5EA8] hover:bg-blue-50/50 transition-all text-left group"
               id="navbar-phone-cta"
             >
               <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -245,28 +257,42 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
               <div>
                 <div className="text-[10px] font-bold text-amber-700 uppercase tracking-wider">
-                  24/7 Emergency
+                  24/7 Helpline
                 </div>
-                <div className="text-sm font-extrabold text-slate-900 tracking-tight">
+                <div className="text-xs font-extrabold text-slate-900 tracking-tight">
                   {businessConfig.phone}
                 </div>
               </div>
             </a>
 
-            <button
-              onClick={onOpenRequestModal}
-              className="bg-[#0D5EA8] hover:bg-[#073B6B] text-white font-bold text-sm px-4 py-2.5 rounded-xl shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
-              id="navbar-request-service-btn"
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl shadow-sm hover:shadow transition-all duration-200 flex items-center gap-1.5"
+              id="navbar-whatsapp-cta-btn"
             >
-              Request Service
-            </button>
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span>WhatsApp Us</span>
+            </a>
           </div>
 
-          {/* Mobile Right Controls: Quick Phone & Hamburger Menu */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile Right Controls: WhatsApp, Quick Phone & Hamburger Menu */}
+          <div className="flex items-center gap-1.5 lg:hidden">
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-sm"
+              aria-label="Chat on WhatsApp"
+              id="navbar-mobile-whatsapp-btn"
+            >
+              <MessageCircle className="w-4 h-4 fill-current" />
+            </a>
+
             <a
               href={businessConfig.rawEmergencyPhone}
-              className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center shadow-sm"
+              className="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center shadow-sm"
               aria-label="Call emergency plumber now"
               id="navbar-mobile-call-btn"
             >
@@ -275,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center hover:bg-slate-200 transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center hover:bg-slate-200 transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               id="navbar-mobile-menu-toggle"
             >
@@ -334,21 +360,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Mobile Bottom Action Buttons */}
               <div className="pt-4 border-t border-slate-100 space-y-2">
                 <a
+                  href={businessConfig.whatsAppLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl shadow-sm transition-colors text-center text-sm"
+                >
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>Chat on WhatsApp: {businessConfig.phone}</span>
+                </a>
+
+                <a
                   href={businessConfig.rawEmergencyPhone}
-                  className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl shadow-sm transition-colors text-center"
+                  className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl shadow-sm transition-colors text-center text-sm"
                 >
                   <Phone className="w-4 h-4 fill-current" />
-                  <span>Call Emergency Crew: {businessConfig.emergencyPhone}</span>
+                  <span>Call Emergency Plumber: {businessConfig.emergencyPhone}</span>
                 </a>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenRequestModal();
-                  }}
-                  className="w-full bg-[#0D5EA8] hover:bg-[#073B6B] text-white font-bold py-3 rounded-xl shadow-sm transition-colors text-center cursor-pointer"
-                >
-                  Request Service Online
-                </button>
               </div>
             </div>
           </motion.div>

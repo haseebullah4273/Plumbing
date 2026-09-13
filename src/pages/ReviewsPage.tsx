@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, CheckCircle2, ArrowRight, Filter, Phone, MessageSquarePlus } from 'lucide-react';
+import { Star, CheckCircle2, MessageSquarePlus, MessageCircle, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { customerReviews, reviewStats } from '../../src/data/testimonials';
 import { businessConfig } from '../data/businessConfig';
@@ -13,24 +13,25 @@ interface ReviewsPageProps {
 
 export const ReviewsPage: React.FC<ReviewsPageProps> = ({
   navigate,
-  onOpenRequestModal,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<'All' | 'Emergency' | 'Drain' | 'Water Heater' | 'Repair'>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [newReviewSubmitted, setNewReviewSubmitted] = useState(false);
+
+  const categories: string[] = [
+    'All',
+    'PPR Service',
+    'PVC Service',
+    'GI Service',
+    'Water Motor & Pumps',
+    'Water Tank Cleaning',
+    'Geyser & Water Heater',
+  ];
 
   const filteredReviews = customerReviews.filter((r) => {
     if (activeCategory === 'All') return true;
     return r.category === activeCategory;
   });
-
-  const categories: Array<'All' | 'Emergency' | 'Drain' | 'Water Heater' | 'Repair'> = [
-    'All',
-    'Emergency',
-    'Drain',
-    'Water Heater',
-    'Repair',
-  ];
 
   return (
     <div className="bg-[#F7F9FC] min-h-screen pb-20">
@@ -39,14 +40,14 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
       {/* Hero Header */}
       <section className="bg-[#071525] text-white py-16 sm:py-20 relative overflow-hidden text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30">
-            Real Feedback from Real Neighbors
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/30">
+            Real Karachi Homeowners • Verified Feedback
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            What Our Customers Say
+            Customer Reviews & Experiences
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto">
-            Read unfiltered feedback from local homeowners who experienced our rapid response, upfront quotes, and clean repairs.
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+            Read unfiltered feedback from residents across DHA, Clifton, Gulshan, PECHS, and North Nazimabad who trust Haider Ali and TheHomist for their home plumbing.
           </p>
         </div>
       </section>
@@ -66,7 +67,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
                 ))}
               </div>
               <p className="text-xs text-slate-500 font-semibold mt-1">
-                Average Rating Across {reviewStats.totalReviews}+ Reviews
+                Average Rating Across {reviewStats.totalReviews}+ Verified Karachi Reviews
               </p>
             </div>
           </div>
@@ -74,18 +75,18 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
           {/* Breakdown percentages */}
           <div className="space-y-1.5 text-xs text-slate-600 max-w-xs mx-auto md:mx-0 w-full">
             <div className="flex items-center gap-2">
-              <span className="w-12 font-bold text-slate-700">5 Stars</span>
+              <span className="w-16 font-bold text-slate-700">5 Stars</span>
               <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-amber-400 rounded-full" style={{ width: '96%' }} />
+                <div className="h-full bg-amber-400 rounded-full" style={{ width: '98%' }} />
               </div>
-              <span className="w-8 text-right font-mono">96%</span>
+              <span className="w-8 text-right font-mono">98%</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-12 font-bold text-slate-700">4 Stars</span>
+              <span className="w-16 font-bold text-slate-700">4 Stars</span>
               <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-amber-400 rounded-full" style={{ width: '4%' }} />
+                <div className="h-full bg-amber-400 rounded-full" style={{ width: '2%' }} />
               </div>
-              <span className="w-8 text-right font-mono">4%</span>
+              <span className="w-8 text-right font-mono">2%</span>
             </div>
           </div>
 
@@ -124,7 +125,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
           </span>
         </div>
 
-        {/* Animated Reviews Grid */}
+        {/* Animated Reviews Grid with Pakistani Faces & Real Neighborhoods */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence>
             {filteredReviews.map((rev) => (
@@ -147,55 +148,75 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
                     <span className="text-[11px] font-bold text-slate-400">{rev.date}</span>
                   </div>
 
-                  <span className="text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full inline-block mb-3">
+                  <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full inline-block mb-3">
                     {rev.servicePerformed}
                   </span>
 
-                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed mb-4">
                     "{rev.content}"
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <div className="font-bold text-slate-900 flex items-center gap-1.5">
-                    <span>{rev.author}</span>
-                    {rev.verified && (
-                      <span className="text-[10px] text-emerald-600 flex items-center gap-0.5">
-                        <CheckCircle2 className="w-3 h-3" /> Verified
-                      </span>
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3.5">
+                  {rev.avatar && (
+                    <img
+                      src={rev.avatar}
+                      alt={rev.author}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500 shadow-xs shrink-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
+                  <div className="min-w-0">
+                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-sm truncate">
+                      <span>{rev.author}</span>
+                      {rev.verified && (
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      )}
+                    </div>
+                    {rev.role && (
+                      <p className="text-[11px] text-slate-500 truncate">{rev.role}</p>
                     )}
+                    <div className="text-[11px] text-sky-700 font-semibold flex items-center gap-1 mt-0.5">
+                      <MapPin className="w-3 h-3 text-sky-600 shrink-0" />
+                      <span>{rev.location}</span>
+                    </div>
                   </div>
-                  <span className="text-slate-500">{rev.location}</span>
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - Direct Call & WhatsApp Only */}
         <div className="bg-[#071525] text-white rounded-3xl p-8 sm:p-12 text-center space-y-4 shadow-xl">
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
-            Next-Level Plumbing Service
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center justify-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            TheHomist Direct Service • Karachi
           </span>
           <h3 className="text-2xl sm:text-3xl font-black text-white">
-            Join Our Happy Customers
+            Need Plumbing Service in Karachi Today?
           </h3>
           <p className="text-slate-300 text-xs sm:text-sm max-w-lg mx-auto">
-            Whether it's a routine faucet repair or an urgent late-night burst pipe, experience why homeowners rate us 4.9 stars.
+            Contact Haider Ali and our specialized Karachi technicians directly via WhatsApp or Phone for fast estimates and prompt arrival.
           </p>
 
           <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={onOpenRequestModal}
-              className="w-full sm:w-auto bg-[#0D5EA8] hover:bg-sky-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-colors cursor-pointer"
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg"
             >
-              Request Service Online
-            </button>
+              <MessageCircle className="w-5 h-5 fill-current" />
+              <span>WhatsApp: {businessConfig.phone}</span>
+            </a>
             <a
               href={businessConfig.rawEmergencyPhone}
-              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-colors"
+              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-7 py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg"
             >
-              Call Us: {businessConfig.phone}
+              <Phone className="w-4 h-4" />
+              <span>Call Us: {businessConfig.phone}</span>
             </a>
           </div>
         </div>
@@ -210,9 +231,9 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
                 <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900">Thank You for Your Feedback!</h4>
+                <h4 className="text-lg font-bold text-slate-900">Shukriya for Your Review!</h4>
                 <p className="text-xs text-slate-600">
-                  Your review has been submitted for verification and will appear on our Google & website profiles shortly.
+                  Your feedback has been submitted to TheHomist and will be displayed after quick verification.
                 </p>
                 <button
                   onClick={() => {
@@ -234,7 +255,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
               >
                 <h4 className="text-base font-bold text-slate-900">Share Your Experience</h4>
                 <p className="text-xs text-slate-500">
-                  Help fellow homeowners find dependable plumbing service.
+                  Help fellow Karachi homeowners find dependable plumbing service with TheHomist.
                 </p>
 
                 <div className="flex text-amber-400 gap-1 py-1">
@@ -248,17 +269,17 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Thomas K."
+                    placeholder="e.g. Tariq Mehmood"
                     className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-slate-700 block mb-1">Neighborhood / City</label>
+                  <label className="text-xs font-bold text-slate-700 block mb-1">Karachi Neighborhood</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. West End Hills"
+                    placeholder="e.g. DHA Phase 6, Clifton, Gulshan-e-Iqbal"
                     className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs"
                   />
                 </div>
@@ -268,7 +289,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
                   <textarea
                     rows={3}
                     required
-                    placeholder="How was our technician's speed, diagnosis, and cleanup?"
+                    placeholder="How was our technician's punctuality, work quality, and upfront pricing?"
                     className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs resize-none"
                   />
                 </div>

@@ -41,7 +41,7 @@ export const BeforeAfterSlider: React.FC = () => {
             Real Craftsmanship
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
-            Before & After: The Apex Standard
+            Before & After: The Homist Standard
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
             Drag the comparison slider left and right to inspect how we transform corroded, leaking, hazardous pipework into clean, code-compliant installations.
@@ -70,7 +70,7 @@ export const BeforeAfterSlider: React.FC = () => {
             {/* After Label */}
             <div className="absolute top-4 right-4 bg-emerald-600/90 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 z-10 pointer-events-none">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>AFTER: Certified Re-pipe</span>
+              <span>AFTER: Heat-Fused Master PPRC</span>
             </div>
 
             {/* "Before" Image (Clipped overlay) */}
@@ -94,7 +94,7 @@ export const BeforeAfterSlider: React.FC = () => {
               {/* Before Label */}
               <div className="absolute top-4 left-4 bg-red-600/90 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 z-10">
                 <AlertCircle className="w-3.5 h-3.5" />
-                <span>BEFORE: Rusted & Leaking</span>
+                <span>BEFORE: Corroded Iron & Wall Seem</span>
               </div>
             </div>
 
@@ -112,13 +112,13 @@ export const BeforeAfterSlider: React.FC = () => {
           {/* Helper caption */}
           <div className="flex items-center justify-between mt-4 text-xs text-slate-500 px-2">
             <span className="flex items-center gap-1 text-red-600 font-semibold">
-              ← Corroded Galvanized Iron (High Hazard)
+              ← Old Rusted Galvanized Pipe (Rusty Water & Leakage)
             </span>
             <span className="text-slate-400 hidden sm:inline">
               Drag slider horizontally to compare
             </span>
             <span className="flex items-center gap-1 text-emerald-600 font-semibold">
-              Type-L Copper & Lead-Free Brass →
+              Concealed Master PPRC Fusion Piping →
             </span>
           </div>
         </div>

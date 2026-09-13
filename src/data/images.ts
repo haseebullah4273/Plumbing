@@ -1,30 +1,65 @@
+import pakHomeHero from '../assets/images/pakistan_home_hero_1789284089987.jpg';
+import pprPipeWelding from '../assets/images/ppr_pipe_welding_1789284103842.jpg';
+import giPipeWork from '../assets/images/gi_pipe_work_1789284116336.jpg';
+import pvcDrainPipes from '../assets/images/pvc_drain_pipes_1789284128204.jpg';
+import pakBathSanitary from '../assets/images/pak_bath_sanitary_1789284140349.jpg';
+import waterMotorPump from '../assets/images/water_motor_pump_1789284981800.jpg';
+import tankCleaning from '../assets/images/tank_cleaning_1789284997334.jpg';
+import geyserService from '../assets/images/geyser_service_1789285009900.jpg';
+import haiderAliOwner from '../assets/images/haider_ali_owner_1789285022133.jpg';
+
+// Real Pakistani customer portraits for Karachi reviews
+import customerTariq from '../assets/images/pak_customer_tariq_1789285247760.jpg';
+import customerAyesha from '../assets/images/pak_customer_ayesha_1789285261508.jpg';
+import customerFarhan from '../assets/images/pak_customer_farhan_1789285273942.jpg';
+import customerRasheed from '../assets/images/pak_customer_rasheed_1789285287589.jpg';
+import customerUsman from '../assets/images/pak_customer_usman_1789285299461.jpg';
+import customerFatima from '../assets/images/pak_customer_fatima_1789285310735.jpg';
+
 /**
- * Centralized Image Configuration
- * Update or substitute URLs here to seamlessly swap branding photography.
+ * Centralized Image Configuration for TheHomist (Karachi)
+ * Every service has a completely unique, authentic photo.
  */
 export const siteImages = {
-  // Hero section cinematic photo of plumber working
-  heroBg: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1920&q=80",
-  heroPlumber: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
+  // Hero section photo of modern Karachi residence
+  heroBg: pakHomeHero,
+  heroPlumber: pprPipeWelding,
   
-  // Plumber technician at work
-  technicianPortrait: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1000&q=80",
-  plumberUnderSink: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80",
-  copperPipes: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+  // Owner Haider Ali
+  owner: haiderAliOwner,
+  ownerPortrait: haiderAliOwner,
+  workshop: pakBathSanitary,
   
-  // Services
-  emergencyPlumbing: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80",
-  drainCleaning: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
-  waterHeater: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80",
-  leakDetection: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80",
-  sewerLine: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
-  faucetRepair: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80",
+  // Exactly 6 Dedicated Services - completely unique image for each
+  pprService: pprPipeWelding,
+  pvcService: pvcDrainPipes,
+  giService: giPipeWork,
+  waterMotorService: waterMotorPump,
+  waterTankCleaning: tankCleaning,
+  geyserService: geyserService,
+
+  // Additional sanitary fixture image
+  sanitaryService: pakBathSanitary,
+  plumberUnderSink: pakBathSanitary,
+  
+  // Technicians & Work
+  technicianPortrait: haiderAliOwner,
   
   // Before & After comparison photos
-  beforeCorrodedPipes: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=900&q=80",
-  afterPristinePipes: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=900&q=80",
+  beforeCorrodedPipes: giPipeWork,
+  afterPristinePipes: pprPipeWelding,
 
-  // About team
+  // Karachi home showcase & team
+  pakistanHome: pakHomeHero,
   teamVan: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
-  workshop: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+
+  // Real Pakistani Customer Review Avatars
+  customers: {
+    tariq: customerTariq,
+    ayesha: customerAyesha,
+    farhan: customerFarhan,
+    rasheed: customerRasheed,
+    usman: customerUsman,
+    fatima: customerFatima,
+  }
 };

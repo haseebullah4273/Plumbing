@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Clock, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Phone, ShieldCheck, MessageCircle } from 'lucide-react';
 import { businessConfig } from '../../data/businessConfig';
 
 interface EmergencyBarProps {
@@ -13,35 +13,41 @@ export const EmergencyBar: React.FC<EmergencyBarProps> = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           {/* Left: Emergency Status & Guarantee */}
           <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded-full text-[11px] border border-amber-500/30">
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded-full text-[11px] border border-emerald-500/30">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
-              24/7 ON-CALL
+              KARACHI 24/7 ACTIVE
             </span>
             <span className="text-slate-300 hidden sm:inline">•</span>
             <span className="text-slate-200 font-medium text-[12px] sm:text-[13px]">
-              Plumbing Emergency? Fast Response When You Need It Most
+              PPR, PVC & GI Specialists across all Karachi Areas
             </span>
-            <span className="text-slate-400 text-[11px] hidden lg:inline">
+            <span className="text-emerald-400 text-[11px] hidden lg:inline font-semibold">
               ({businessConfig.responseGuarantee})
             </span>
           </div>
 
-          {/* Right: Quick Call CTA */}
-          <div className="flex items-center gap-4 text-xs">
-            <span className="text-slate-400 hidden md:inline-flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" />
-              {businessConfig.licenseNumber}
-            </span>
+          {/* Right: Quick Call & WhatsApp CTA */}
+          <div className="flex items-center justify-center gap-2 sm:gap-3 text-xs flex-wrap">
+            <a
+              href={businessConfig.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-2.5 py-1 rounded transition-colors duration-200"
+              id="emergency-bar-whatsapp-btn"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>WhatsApp: {businessConfig.phone}</span>
+            </a>
             <a
               href={businessConfig.rawEmergencyPhone}
               className="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded transition-colors duration-200 tracking-wide"
               id="emergency-bar-call-btn"
             >
               <Phone className="w-3 h-3 fill-current" />
-              <span>Call Now: {businessConfig.emergencyPhone}</span>
+              <span>Call: {businessConfig.phone}</span>
             </a>
           </div>
         </div>

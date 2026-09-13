@@ -15,7 +15,8 @@ import {
   Wrench,
   HelpCircle,
   MapPin,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { ServiceItem, PageRoute } from '../types';
@@ -74,14 +75,15 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
             {/* Action Buttons */}
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-              <button
-                type="button"
-                onClick={() => onOpenRequestModal(service.slug)}
-                className="inline-flex items-center justify-center gap-2 bg-[#0D5EA8] hover:bg-[#073B6B] text-white font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg transition-colors cursor-pointer"
+              <a
+                href={`https://wa.me/923122673667?text=Assalam-o-Alaikum%20TheHomist,%20I%20need%20${encodeURIComponent(service.title)}%20in%20Karachi.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg transition-colors"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Request {service.title}</span>
-              </button>
+                <MessageCircle className="w-4 h-4 fill-current" />
+                <span>WhatsApp for {service.title}</span>
+              </a>
 
               <a
                 href={businessConfig.rawEmergencyPhone}
@@ -235,7 +237,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 Transparent Guarantees
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Why Trust Apex for {service.title}?
+                Why Trust The Homist for {service.title}?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {service.benefits.map((b, i) => (
@@ -315,7 +317,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
         <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center space-y-3">
           <h4 className="text-sm font-bold text-slate-800 flex items-center justify-center gap-1.5">
             <MapPin className="w-4 h-4 text-sky-600" />
-            <span>Providing {service.title} across Metro Valley communities</span>
+            <span>Providing {service.title} across Karachi Neighborhoods</span>
           </h4>
           <p className="text-xs text-slate-500 max-w-xl mx-auto">
             Units stationed for rapid dispatch in {serviceAreasData.map((a) => a.name).join(', ')}.
@@ -324,7 +326,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             onClick={() => navigate('/service-areas')}
             className="text-xs font-bold text-[#0D5EA8] hover:underline"
           >
-            Check response times in your specific neighborhood →
+            Check response times in your specific Karachi sector →
           </button>
         </div>
 
@@ -335,17 +337,20 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               Ready to schedule your {service.title.toLowerCase()}?
             </h3>
             <p className="text-sky-200 text-xs sm:text-sm mt-1">
-              Contact our live dispatcher or reserve your convenient 2-hour arrival window online.
+              Contact our live dispatcher or send a message on WhatsApp with your location and photos.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-            <button
-              onClick={() => onOpenRequestModal(service.slug)}
-              className="w-full sm:w-auto bg-white hover:bg-slate-100 text-[#073B6B] font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md transition-colors cursor-pointer text-center"
+            <a
+              href={`https://wa.me/923122673667?text=Assalam-o-Alaikum%20TheHomist,%20I%20need%20${encodeURIComponent(service.title)}%20in%20Karachi.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md transition-colors cursor-pointer text-center inline-flex items-center justify-center gap-2"
             >
-              Request Service Online
-            </button>
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span>WhatsApp Plumber</span>
+            </a>
             <a
               href={businessConfig.rawEmergencyPhone}
               className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md transition-colors text-center flex items-center justify-center gap-2"

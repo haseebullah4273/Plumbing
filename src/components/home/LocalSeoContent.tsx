@@ -10,13 +10,13 @@ export const LocalSeoContent: React.FC<{ navigate: (route: PageRoute) => void }>
         <div className="max-w-4xl mx-auto">
           <div className="border-b border-slate-200 pb-6 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0D5EA8]">
-              Local Plumbing Expertise
+              Plumbing Guide for Pakistani Homes
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-              Your Dependable Local Plumbing Resource
+              Trusted Plumbing Knowledge & Practical Standards
             </h3>
             <p className="text-slate-600 text-sm mt-2">
-              Understanding residential plumbing maintenance, code standards, and preventative care for local homeowners.
+              Understanding water line materials, concealed leak prevention, and motor/geyser care for homes across Pakistan.
             </p>
           </div>
 
@@ -24,52 +24,52 @@ export const LocalSeoContent: React.FC<{ navigate: (route: PageRoute) => void }>
             <div className="space-y-4">
               <h4 className="font-bold text-slate-900 text-base flex items-center gap-2">
                 <Wrench className="w-4 h-4 text-[#0D5EA8]" />
-                <span>Residential Plumbing Integrity in {businessConfig.city}</span>
+                <span>PPR vs. Old Galvanized Iron (GI) Lines</span>
               </h4>
               <p className="text-slate-600">
-                Homes across {businessConfig.city} and surrounding communities feature a wide spectrum of architectural ages—from vintage residences with galvanized iron water mains to modern constructions using Uponor PEX-a manifolds. Aging metal pipes frequently experience mineral tuberculation and galvanic electrolysis, restricting shower pressure and creating hidden pinhole leaks behind plaster walls.
+                In older homes across Karachi, galvanized iron (GI) pipes eventually rust from inside out due to brackish line water and saline humidity, causing severe flow reduction, red tap water, and hidden wall seepage (shelan/seem).
               </p>
               <p className="text-slate-600">
-                Our licensed journeymen plumbers specialize in non-destructive electronic diagnostic inspections, pinpointing internal corrosion and offering surgical spot repairs or full copper repipes that protect your investment.
+                We specialize in concealed re-piping using high-grade Polypropylene Random Copolymer (PPR/PPRC) piping from certified brands like Master and Popular. Heat-fused joints eliminate mechanical threads and create a 100% leak-proof, scale-resistant system engineered to last over 50 years.
               </p>
             </div>
 
             <div className="space-y-4">
               <h4 className="font-bold text-slate-900 text-base flex items-center gap-2">
                 <Flame className="w-4 h-4 text-orange-500" />
-                <span>Water Heater Efficiency & Safe Venting</span>
+                <span>Gas & Electric Geyser Maintenance & Safety</span>
               </h4>
               <p className="text-slate-600">
-                With regional water supplies containing moderate mineral hardness, standard tank water heaters accumulate calcium carbonate sedimentation at the base of the tank. Over time, this traps heat, causes rumbling popcorn noises, overheats the steel bottom, and leads to premature tank rupture.
+                Gas shortages and hard groundwater cause significant sediment build-up and burner pilot clogging in storage geysers (Nasgas, Canon, Singer). Unserviced geysers pose severe carbon monoxide hazards and pressure burst risks.
               </p>
               <p className="text-slate-600">
-                Whether you require an annual flush and sacrificial anode rod replacement, an emergency replacement with code-required thermal expansion tanks, or a space-saving high-efficiency tankless water heater conversion, our technicians ensure total safety and optimal energy savings.
+                Our technicians test thermo-couples, burner orifices, and pressure relief safety valves, or install energy-efficient instant gas and electric geysers with correct non-return valves (NRVs) to protect your family throughout the winter season.
               </p>
             </div>
 
             <div className="space-y-4">
               <h4 className="font-bold text-slate-900 text-base flex items-center gap-2">
                 <Droplets className="w-4 h-4 text-sky-500" />
-                <span>Modern Trenchless Sewer & Hydro-Jetting</span>
+                <span>PVC Drainage, Underground & Roof Water Tanks</span>
               </h4>
               <p className="text-slate-600">
-                Subsurface tree root penetration is the leading cause of chronic sewer backups in our area. Mature oak and elm roots exploit microscopic moisture beads along clay and cast iron pipe joints, quickly forming impenetrable root webs.
+                Improper slope and weak solvent joints in PVC sanitary drains cause persistent foul bathroom odors, floor drain overflow, and subterranean foundation soaking.
               </p>
               <p className="text-slate-600">
-                Rather than digging disruptive open trenches across your driveway, we utilize commercial-grade hydro-jetting to scour away roots, followed by continuous cured-in-place pipe (CIPP) relining to create a smooth, seamless barrier that lasts 50+ years.
+                We install UPVC multi-floor drainage stacks with anti-syphon traps and inspect underground water tanks (UGT) and roof tanks, providing hygienic deep-cleaning and float-valve automation to prevent water wastage.
               </p>
             </div>
 
             <div className="space-y-4">
               <h4 className="font-bold text-slate-900 text-base flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 text-amber-500" />
-                <span>24/7 Emergency Dispatch Standards</span>
+                <span>24/7 Doorstep Emergency Dispatch in Pakistan</span>
               </h4>
               <p className="text-slate-600">
-                Plumbing disasters don't wait for business hours. When a main pressurized water line ruptures at 2 AM, having immediate access to a live human dispatcher and a local master plumber saves tens of thousands in drywall and flooring replacement.
+                When a water motor fails during scheduled water supply hours, or a concealed pipe bursts inside your bedroom wall at night, waiting until tomorrow can cause thousands in ruined masonry and furniture.
               </p>
               <p className="text-slate-600">
-                Our emergency rolling trucks carry universal press fittings, mechanical freeze kits, temporary water bypass systems, and industrial sump extractors to secure your home without hesitation.
+                Our emergency plumbers carry mobile PPR fusion welding machines, test pressure pumps, spare motor capacitors, and pipe fittings for swift on-the-spot resolution.
               </p>
             </div>
           </div>

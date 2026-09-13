@@ -2,63 +2,73 @@ import { ServiceArea } from '../types';
 
 export const serviceAreasData: ServiceArea[] = [
   {
-    id: 'metro-valley',
-    name: 'Metro Valley (Central)',
-    county: 'Valley County',
-    zipCodes: ['94016', '94015', '94014', '94017'],
-    avgResponseMinutes: 25,
+    id: 'dha-karachi',
+    name: 'DHA Karachi (Phases 1 to 8)',
+    county: 'District South, Karachi',
+    zipCodes: ['75500', 'Phase-1', 'Phase-2', 'Phase-5', 'Phase-6', 'Phase-8'],
+    avgResponseMinutes: 20,
     featured: true,
-    description: 'Our primary dispatch headquarters. Immediate response units stationed on standby 24/7 for residential and commercial plumbing emergencies.',
-    majorStreets: ['Highland Blvd', 'Main St', 'Valley Parkway', 'El Camino Real']
+    description: 'Rapid doorstep plumbing services across all DHA Karachi phases. Specialists in concealed PPRC leak repairs, luxury bathroom mixers, booster pump installations, and roof tank automation.',
+    majorStreets: ['Khayaban-e-Shahbaz', 'Khayaban-e-Ittehad', 'Khayaban-e-Shamsheer', '26th Street', 'Khayaban-e-Hafiz']
   },
   {
-    id: 'northside-park',
-    name: 'Northside Park & Highlands',
-    county: 'Valley County',
-    zipCodes: ['94020', '94022', '94024'],
+    id: 'clifton-karachi',
+    name: 'Clifton (Blocks 1 to 9)',
+    county: 'District South, Karachi',
+    zipCodes: ['75600', 'Block-1', 'Block-2', 'Block-5', 'Block-7', 'Block-9'],
+    avgResponseMinutes: 25,
+    featured: true,
+    description: 'Coastal Karachi sanitary experts. Fast repair for high-rise apartment plumbing, rust-resistant GI pipe replacements, underground water sump waterproofing, and pressure pump diagnostics.',
+    majorStreets: ['Boat Basin', 'Khayaban-e-Iqbal', 'Near Bilawal House', 'Neelam Point Road', 'Marine Drive']
+  },
+  {
+    id: 'gulshan-e-iqbal',
+    name: 'Gulshan-e-Iqbal & Gulshan Blocks',
+    county: 'District East, Karachi',
+    zipCodes: ['75300', 'Block-1', 'Block-5', 'Block-10', 'Block-13D', 'Block-15'],
     avgResponseMinutes: 30,
     featured: true,
-    description: 'Comprehensive residential plumbing services specializing in historic home repiping, tankless conversions, and fixture installations.',
-    majorStreets: ['North Crest Ave', 'Hillcrest Drive', 'Parkway Boulevard']
+    description: 'Complete plumbing maintenance for residential bungalows and apartments. Specialized in KWSB suction motor repairs, automatic float switches, and UPVC drainage unchoking.',
+    majorStreets: ['University Road', 'Rashid Minhas Road', 'Allama Shabbir Ahmed Usmani Road', 'Disco Bakery Chowk']
   },
   {
-    id: 'west-end-hills',
-    name: 'West End Hills & Ridgeway',
-    county: 'Valley County',
-    zipCodes: ['94030', '94032', '94035'],
-    avgResponseMinutes: 35,
-    featured: true,
-    description: 'High-elevation water pressure diagnostics, booster pump installations, and whole-house pressure regulation valves.',
-    majorStreets: ['Skyline Way', 'Ridge View Road', 'Canyon Drive']
-  },
-  {
-    id: 'downtown-metro',
-    name: 'Downtown Commercial & Lofts',
-    county: 'Valley County',
-    zipCodes: ['94001', '94002', '94003'],
+    id: 'pechs-bahadurabad',
+    name: 'PECHS, Tariq Road & Bahadurabad',
+    county: 'District East, Karachi',
+    zipCodes: ['75400', 'PECHS-2', 'PECHS-6', 'Bahadurabad', 'SMCHS'],
     avgResponseMinutes: 25,
     featured: true,
-    description: 'Multi-story drain snaking, high-efficiency water heater maintenance, backflow certification, and rapid leak mitigation.',
-    majorStreets: ['Commerce Ave', 'Broadway', '4th Street', 'Market Way']
+    description: 'Expert residential and commercial plumbing. Concealed bathroom wall leakage (seem) detection, geyser installation, Muslim shower repairs, and sanitary ware upgrades.',
+    majorStreets: ['Shahrah-e-Faisal', 'Tariq Road', 'Allama Iqbal Road', 'Bahadur Shah Zafar Road', 'Khalid Bin Walid Road']
   },
   {
-    id: 'eastgate-district',
-    name: 'Eastgate & Meadowbrook',
-    county: 'Valley County',
-    zipCodes: ['94040', '94041', '94043'],
+    id: 'gulistan-e-johar',
+    name: 'Gulistan-e-Johar & Saadi Town',
+    county: 'District East, Karachi',
+    zipCodes: ['75290', 'Block-1', 'Block-12', 'Block-14', 'Block-19', 'Saadi-Town'],
+    avgResponseMinutes: 30,
+    featured: false,
+    description: 'Prompt on-call plumbers for apartment complexes and family homes. Water tank deep cleaning, motor capacitor replacement, and sewer line blockage removal.',
+    majorStreets: ['Johar Chowrangi', 'Kamran Chowrangi', 'Pehlwan Goth Road', 'Professors Society', 'University Road Extension']
+  },
+  {
+    id: 'north-nazimabad',
+    name: 'North Nazimabad & Nazimabad',
+    county: 'District Central, Karachi',
+    zipCodes: ['74600', '74700', 'Block-A', 'Block-H', 'Block-L', 'Nazimabad-3'],
     avgResponseMinutes: 35,
     featured: false,
-    description: 'Trenchless sewer line replacements, tree-root intrusion removal, and preventative maintenance for suburban single-family homes.',
-    majorStreets: ['Eastgate Parkway', 'Meadow Lane', 'Sunrise Ave']
+    description: 'Trusted plumbing support for independent houses. Replacement of aged GI galvanized pipes with certified PPRC lines, underground water reservoir sealing, and geyser servicing.',
+    majorStreets: ['Shahrah-e-Humayun', 'KDA Chowrangi', 'Khadija Girls College Road', 'Five Star Chowrangi', 'Gol Market']
   },
   {
-    id: 'southwood-valley',
-    name: 'Southwood Valley & Orchards',
-    county: 'Valley County',
-    zipCodes: ['94050', '94051', '94054'],
-    avgResponseMinutes: 40,
+    id: 'bahria-town-karachi',
+    name: 'Bahria Town Karachi & Malir Cantt',
+    county: 'Malir, Karachi',
+    zipCodes: ['75330', 'Precinct-1', 'Precinct-10', 'Precinct-12', 'Malir-Cantt'],
+    avgResponseMinutes: 35,
     featured: false,
-    description: 'Non-invasive slab leak detection, irrigation line tie-in repairs, and whole-home water filtration & softener systems.',
-    majorStreets: ['Orchard Road', 'Southwood Blvd', 'Plum Tree Way']
+    description: 'Dedicated team for Bahria Town Karachi precincts and Malir Cantt. Modern sanitary fittings, instant water heater tuning, booster pumps, and preventive maintenance.',
+    majorStreets: ['Jinnah Avenue', 'Main Boulevard Precinct 1', 'Midway Commercial', 'Falcon Complex', 'DOHS']
   }
 ];
